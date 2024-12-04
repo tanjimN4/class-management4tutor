@@ -105,18 +105,26 @@ const Nav = () => {
               <div className="flex items-center justify-between gap-2">
                 <div>
                   <div className="dropdown dropdown-end">
-                    <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
+                    <label
+                      tabIndex="0"
+                      className="btn btn-ghost btn-circle avatar"
+                    >
                       <div className="w-16 rounded-full">
-                        <img src="https://avatars.githubusercontent.com/u/124599?v=4" alt="User Avatar" />
+                        <img
+                          src="https://avatars.githubusercontent.com/u/124599?v=4"
+                          alt="User Avatar"
+                        />
                       </div>
                     </label>
                     <ul className="menu dropdown-content bg-slate-500 text-white rounded-box z-[1] w-80 p-2 shadow">
                       <li>
                         <button className="flex items-center gap-2">
-                          <p className="font-bold">Email:</p> {session.data.user.email}
+                          <p className="font-bold">Email:</p>{" "}
+                          {session.data.user.email}
                         </button>
                         <button className="flex items-center gap-2">
-                          <p className="font-bold">Name:</p> {session.data.user.name}
+                          <p className="font-bold">Name:</p>{" "}
+                          {session.data.user.name}
                         </button>
                       </li>
                       <li>
@@ -126,22 +134,22 @@ const Nav = () => {
                         >
                           Sign out
                         </button>
-
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
             ) : (
-              <button
-                onClick={() => signIn()}
-                className="py-2 px-4 rounded-md border font-semibold bg-blue-600 text-white hover:bg-blue-500 transform transition duration-300 ease-in-out hover:scale-105 focus:outline-none hover:text-black"
-              >
-                Sign in
-              </button>
+              <Link href="/login">
+                <button
+                  // onClick={() => signIn()}
+                  className="py-2 px-4 rounded-md border font-semibold bg-blue-600 text-white hover:bg-blue-500 transform transition duration-300 ease-in-out hover:scale-105 focus:outline-none hover:text-black"
+                >
+                  Sign in
+                </button>
+              </Link>
             )}
           </div>
-
         </div>
       </nav>
     </>
